@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1728876229252,
@@ -20,6 +20,10 @@
                 {
                     "date": 1728879237637,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,11 @@\n     getters: {\r\n       doubleCount: (state) => state.count * 2,\r\n     },\r\n     actions: {\r\n+      decrement() {\r\n+        this.count--\r\n+      },\r\n       increment() {\r\n         this.count++\r\n       },\r\n     },\r\n"
+                },
+                {
+                    "date": 1728888527537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { defineStore } from 'pinia'\r\n \r\n export const useCounterStore = defineStore('count', {\r\n-    state: () => ({ count: 4, name: 'Eduardo' }),\r\n+    state: () => ({ count: 4, name: 'Zuldi' }),\r\n     getters: {\r\n       doubleCount: (state) => state.count * 2,\r\n     },\r\n     actions: {\r\n"
                 }
             ],
             "date": 1728876229252,
