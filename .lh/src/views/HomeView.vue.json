@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/views/HomeView.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1728874713630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728878238823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n </script>\n \n <template>\n   <main>\n-    <TheWelcome />\n+    <h1>Ini Halaman Home</h1>\n   </main>\n </template>\n"
+                },
+                {
+                    "date": 1728878265791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <script setup>\n-import TheWelcome from '../components/TheWelcome.vue'\n </script>\n \n <template>\n-  <main>\n+  <main class=\"mx-auto\">\n     <h1>Ini Halaman Home</h1>\n   </main>\n </template>\n"
+                },
+                {
+                    "date": 1728878274258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <script setup>\n </script>\n \n <template>\n-  <main class=\"mx-auto\">\n+  <main class=\"text-center\">\n     <h1>Ini Halaman Home</h1>\n   </main>\n </template>\n"
+                },
+                {
+                    "date": 1728878289009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n </script>\n \n <template>\n   <main class=\"text-center\">\n-    <h1>Ini Halaman Home</h1>\n+    <h1 class=\"text-2xl\">Ini Halaman Home</h1>\n   </main>\n </template>\n"
+                },
+                {
+                    "date": 1728878352804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <script setup>\n </script>\n \n <template>\n-  <main class=\"text-center\">\n+  <main class=\"text-center mt-4\">\n     <h1 class=\"text-2xl\">Ini Halaman Home</h1>\n   </main>\n </template>\n"
+                }
+            ],
+            "date": 1728874713630,
+            "name": "Commit-0",
+            "content": "<script setup>\nimport TheWelcome from '../components/TheWelcome.vue'\n</script>\n\n<template>\n  <main>\n    <TheWelcome />\n  </main>\n</template>\n"
+        }
+    ]
+}

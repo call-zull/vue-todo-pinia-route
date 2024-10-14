@@ -1,0 +1,470 @@
+{
+    "sourceFile": "src/views/TodoView.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 113,
+            "patches": [
+                {
+                    "date": 1728875142104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728875155869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n <template>\r\n     <div class=\"mx-auto\">\r\n-\r\n-        <h1>Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-center\">Ini Halaman Todo List</h1>\r\n     </div>\r\n </template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728875163809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <template>\r\n-    <div class=\"mx-auto\">\r\n+    <div class=\"mx-auto mt-4\">\r\n         <h1 class=\"text-center\">Ini Halaman Todo List</h1>\r\n     </div>\r\n </template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728875571463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,20 @@\n <template>\r\n     <div class=\"mx-auto mt-4\">\r\n         <h1 class=\"text-center\">Ini Halaman Todo List</h1>\r\n     </div>\r\n-</template>\n\\ No newline at end of file\n+</template>\r\n+\r\n+<script>\r\n+import {useTodoStore} from '../stores/todoStore'\r\n+\r\n+export default {\r\n+    setup() {\r\n+        const store = useTodoStore()\r\n+        return {\r\n+            store\r\n+        }\r\n+    }\r\n+}\r\n+\r\n+\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728875582688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n import {useTodoStore} from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n-        const store = useTodoStore()\r\n+        const todoStore = useTodoStore()\r\n         return {\r\n             store\r\n         }\r\n     }\r\n"
+                },
+                {
+                    "date": 1728875591534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n export default {\r\n     setup() {\r\n         const todoStore = useTodoStore()\r\n         return {\r\n-            store\r\n+            todoStore\r\n         }\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1728875601791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\r\n     <div class=\"mx-auto mt-4\">\r\n         <h1 class=\"text-center\">Ini Halaman Todo List</h1>\r\n+\r\n+        {{ todoStore.name }}\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728875622017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n-    <div class=\"mx-auto mt-4\">\r\n+    <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-center\">Ini Halaman Todo List</h1>\r\n \r\n-        {{ todoStore.name }}\r\n+        {{ todoStore }}\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728875636633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n-        <h1 class=\"text-center\">Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n         {{ todoStore }}\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728875657970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n-        {{ todoStore }}\r\n+        <p>\r\n+\r\n+            {{ todoStore }}\r\n+        </p>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728875674185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n-        <p>\r\n+        <p class=\"text-lg\">\r\n \r\n             {{ todoStore }}\r\n         </p>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728875701093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n         <p class=\"text-lg\">\r\n \r\n-            {{ todoStore }}\r\n+            {{ todoStore.count }}\r\n         </p>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728875732267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \r\n         <p class=\"text-lg\">\r\n \r\n             {{ todoStore.count }}\r\n+            {{ todoStore.name }}\r\n         </p>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728875738085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n         <p class=\"text-lg\">\r\n-\r\n             {{ todoStore.count }}\r\n             {{ todoStore.name }}\r\n         </p>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728875772105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \r\n         <p class=\"text-lg\">\r\n             {{ todoStore.count }}\r\n             {{ todoStore.name }}\r\n+            {{ todoStore.doubleCount }}\r\n         </p>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728875812891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n             {{ todoStore.count }}\r\n             {{ todoStore.name }}\r\n             {{ todoStore.doubleCount }}\r\n         </p>\r\n+        <button @click=\"todoStore.increment\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728875851120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ todoStore.count }}\r\n             {{ todoStore.name }}\r\n             {{ todoStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"todoStore.increment\">Add</button>\r\n+        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-3\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728875864390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ todoStore.count }}\r\n             {{ todoStore.name }}\r\n             {{ todoStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-3\">Add</button>\r\n+        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-3 rounded-md font-bold\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728875870438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ todoStore.count }}\r\n             {{ todoStore.name }}\r\n             {{ todoStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-3 rounded-md font-bold\">Add</button>\r\n+        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-2 rounded-md font-bold\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728875883062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ todoStore.count }}\r\n             {{ todoStore.name }}\r\n             {{ todoStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-2 rounded-md font-bold\">Add</button>\r\n+        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728876278998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n import {useTodoStore} from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n-        const todoStore = useTodoStore()\r\n+        const countStore = useTodoStore()\r\n         return {\r\n             todoStore\r\n         }\r\n     }\r\n"
+                },
+                {
+                    "date": 1728876287188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n-import {useTodoStore} from '../stores/todoStore'\r\n+import {useCounterStore} from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n         const countStore = useTodoStore()\r\n"
+                },
+                {
+                    "date": 1728876301994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n-import {useCounterStore} from '../stores/todoStore'\r\n+import {useCounterStore} from '../stores/counterStore'\r\n \r\n export default {\r\n     setup() {\r\n         const countStore = useTodoStore()\r\n"
+                },
+                {
+                    "date": 1728876312956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n import {useCounterStore} from '../stores/counterStore'\r\n \r\n export default {\r\n     setup() {\r\n-        const countStore = useTodoStore()\r\n+        const countStore = useCounterStore()\r\n         return {\r\n             todoStore\r\n         }\r\n     }\r\n"
+                },
+                {
+                    "date": 1728876323208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n export default {\r\n     setup() {\r\n         const countStore = useCounterStore()\r\n         return {\r\n-            todoStore\r\n+            countStore\r\n         }\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1728876345152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n         <p class=\"text-lg\">\r\n-            {{ todoStore.count }}\r\n-            {{ todoStore.name }}\r\n-            {{ todoStore.doubleCount }}\r\n+            {{ countStore.count }}\r\n+            {{ countStore.name }}\r\n+            {{ countStore.doubleCount }}\r\n         </p>\r\n         <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728876368794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,8 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n-        <p class=\"text-lg\">\r\n-            {{ countStore.count }}\r\n-            {{ countStore.name }}\r\n-            {{ countStore.doubleCount }}\r\n-        </p>\r\n-        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728876731320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n-import {useCounterStore} from '../stores/counterStore'\r\n+import {useTodoStore} from '../stores/counterStore'\r\n \r\n export default {\r\n     setup() {\r\n         const countStore = useCounterStore()\r\n"
+                },
+                {
+                    "date": 1728876757189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,15 +5,15 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n-import {useTodoStore} from '../stores/counterStore'\r\n+import {useTodoStore} from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n-        const countStore = useCounterStore()\r\n+        const todoStore = useTodoStore()\r\n         return {\r\n-            countStore\r\n+            todoStore\r\n         }\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1728876770610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-\r\n+        <p>\r\n+            {{ todoStore.todos }}\r\n+        </p>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728876776200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <p>\r\n-            {{ todoStore.todos }}\r\n+            {{ todoStore.todoList }}\r\n         </p>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728876851555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <p>\r\n+        <ul>\r\n+            <li v-for=\"todo in todoStore.todoList\" :key=\"todo.id\"></li>\r\n+        </ul>\r\n             {{ todoStore.todoList }}\r\n-        </p>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728876921731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul>\r\n-            <li v-for=\"todo in todoStore.todoList\" :key=\"todo.id\"></li>\r\n+            <li v-for=\"todo in todoStore.todoList\" :key=\"todo.id\">\r\n+                {{ todoStore.todoList }}\r\n+            </li>\r\n         </ul>\r\n-            {{ todoStore.todoList }}\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728876937310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul>\r\n             <li v-for=\"todo in todoStore.todoList\" :key=\"todo.id\">\r\n-                {{ todoStore.todoList }}\r\n+                {{ todoStore.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728876949681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul>\r\n             <li v-for=\"todo in todoStore.todoList\" :key=\"todo.id\">\r\n-                {{ todoStore.name }}\r\n+                {{ todo.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728876960474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul>\r\n-            <li v-for=\"todo in todoStore.todoList\" :key=\"todo.id\">\r\n-                {{ todo.name }}\r\n+            <li v-for=\"list in todoStore.todoList\" :key=\"todo.id\">\r\n+                {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728876974805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul>\r\n+        <ul class=\"mt-4\">\r\n             <li v-for=\"list in todoStore.todoList\" :key=\"todo.id\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728876997935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n-        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"mt-4\">\r\n+        <h1 class=\"text-2xl mb-3\">Ini Halaman Todo List</h1>\r\n+        <ul>\r\n             <li v-for=\"list in todoStore.todoList\" :key=\"todo.id\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877020470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n-        <h1 class=\"text-2xl mb-3\">Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul>\r\n             <li v-for=\"list in todoStore.todoList\" :key=\"todo.id\">\r\n                 {{ list.name }}\r\n             </li>\r\n"
+                },
+                {
+                    "date": 1728877171219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul>\r\n-            <li v-for=\"list in todoStore.todoList\" :key=\"todo.id\">\r\n+            <li v-for=\"list in todoStore.todoList\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877276702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul>\r\n+        <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877292094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877311917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n-    <div class=\"mx-auto text-center mt-4\">\r\n+    <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 p-1\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877323266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n-        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-2xl mb-2\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 p-1\">\r\n                 {{ list.name }}\r\n             </li>\r\n"
+                },
+                {
+                    "date": 1728877379290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n-        <h1 class=\"text-2xl mb-2\">Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 p-1\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877406162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 boerder-black p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877420669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 boerder-black p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 border-indigo-600 p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877428409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 border-indigo-600 p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 border-blackp-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877437086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-4 border-blackp-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877451592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 gap-x-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877461344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 gap-x-2 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 mx-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877469977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 mx-2 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-5 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877480168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-5 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877491638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 mx-auto border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877498645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mx-autor mt-4\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 mx-auto border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877512194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mx-autor mt-4\">\r\n+    <div class=\"mx-auto mt-4 flex\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877518537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mx-auto mt-4 flex\">\r\n+    <div class=\"mt-4 flex\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877526156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 flex\">\r\n+    <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877549394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 my-3 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877557428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n-        <h1 class=\"text-2xl mb-4\">Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n"
+                },
+                {
+                    "date": 1728877571645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 flex justify-center\">\r\n+    <div class=\"mt-4 flex justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877587024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 flex justify-center items-center\">\r\n+    <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px]\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877599418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px]\">\r\n+        <ul class=\"w-[500px] flex justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877608731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px] flex justify-center\">\r\n+        <ul class=\"w-[500px] flex flex-col\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877614256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px] flex flex-col\">\r\n+        <ul class=\"w-[500px] flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877627057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px] flex flex-col justify-center\">\r\n+        <ul class=\"w-[500px] flex flex-col items-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877638610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px] flex flex-col items-center\">\r\n+        <ul class=\"w-[500px] flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877660394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 flex justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px] flex flex-col justify-center\">\r\n+        <ul class=\"\" flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877675403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n-    <div class=\"mt-4 flex justify-center\">\r\n+    <div class=\"mt-4 flex-col justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"\" flex flex-col justify-center\">\r\n+        <ul class=\"flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877684584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 flex-col justify-center\">\r\n+    <div class=\"mt-4 flex-col gap-y-2 justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877692006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 flex-col gap-y-2 justify-center\">\r\n+    <div class=\"mt-4 flex-col justify-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877698398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 flex-col justify-center\">\r\n+    <div class=\"mt-4 flex-col justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877712117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 flex-col justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"flex flex-col justify-center\">\r\n+        <ul class=\"w-44flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877726267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n-    <div class=\"mt-4 flex-col justify-center items-center\">\r\n+    <div class=\"mt-4 bg-red-500flex-col justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-44flex flex-col justify-center\">\r\n+        <ul class=\"w-44 flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877741298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 bg-red-500flex-col justify-center items-center\">\r\n+    <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-44 flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877759338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-44 flex flex-col justify-center\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid items-center border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877770124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-44 flex flex-col justify-center\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid items-center border-2 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid flex justify-center border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877784117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-44 flex flex-col justify-center\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid flex justify-center border-2 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid text-center border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877797506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-44 flex flex-col justify-center\">\r\n+        <!-- <ul class=\"w-44 flex flex-col justify-center\"> -->\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid text-center border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n-        </ul>\r\n+        <!-- </ul> -->\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728877812775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <!-- <ul class=\"w-44 flex flex-col justify-center\"> -->\r\n+        <ul class=\"w-44 flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid text-center border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n-        <!-- </ul> -->\r\n+        </ul>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728877822088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-44 flex flex-col justify-center\">\r\n+        <ul class=\"w-80 flex flex-col justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid text-center border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877830274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-80 flex flex-col justify-center\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid text-center border-2 border-black rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728877843966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-80 flex flex-col justify-center\">\r\n+        <ul class=\"w-80 flex justify-center\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877860321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-80 flex justify-center\">\r\n+        <ul class=\"w-80 text-start\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877868756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-80 text-start\">\r\n+        <ul class=\"w-80 text-start mt-3\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877879760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-80 text-start mt-3\">\r\n+        <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877892879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n-        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n"
+                },
+                {
+                    "date": 1728877910450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n+        <ul class=\"w-full text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877917838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n         <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-full text-start mt-3 bg-blue-400\">\r\n+        <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728877924159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 bg-red-500 flex-col text-center justify-center items-center\">\r\n+    <div class=\"mt-4 bg-red-500 flex-col justify-center items-center\">\r\n         <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877943550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 bg-red-500 flex-col justify-center items-center\">\r\n+    <div class=\"mt-4 bg-red-500 flex-col\">\r\n         <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877955091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 bg-red-500 flex-col\">\r\n+    <div class=\"mt-4 w-full bg-red-500 flex-col items-center\">\r\n         <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877961294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 w-full bg-red-500 flex-col items-center\">\r\n+    <div class=\"mt-4 w-full bg-red-500 flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n"
+                },
+                {
+                    "date": 1728877999386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <div class=\"mt-4 w-full bg-red-500 flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-80 text-start mt-3 bg-blue-400\">\r\n+        <ul class=\"w-[500px] text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n"
+                },
+                {
+                    "date": 1728878006543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n-    <div class=\"mt-4 w-full bg-red-500 flex-col items-center justify-between\">\r\n-        <h1 class=\"text-2xl bg-green-600\">Ini Halaman Todo List</h1>\r\n+    <div class=\"mt-4 w-full  flex-col items-center justify-between\">\r\n+        <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px] text-start mt-3 bg-blue-400\">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n"
+                },
+                {
+                    "date": 1728878023725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 w-full  flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px] text-start mt-3 bg-blue-400\">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black rounded-md p-4\">\r\n+        <ul class=\"w-[500px] text-start mt-3 \">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black my-2 rounded-md p-4\">\r\n                 {{ list.name }}\r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728878101181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,14 @@\n     <div class=\"mt-4 w-full  flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px] text-start mt-3 \">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black my-2 rounded-md p-4\">\r\n+               <span>\r\n                 {{ list.name }}\r\n+               </span> \r\n+               <span>\r\n+                <button>Done</button>\r\n+               </span> \r\n             </li>\r\n         </ul>\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728878108094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n-                <button>Done</button>\r\n+                    <button>Done</button>\r\n                </span> \r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728878146332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 w-full  flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px] text-start mt-3 \">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 border-black my-2 rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 flex justify-around border-black my-2 rounded-md p-4\">\r\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n"
+                },
+                {
+                    "date": 1728878157299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 w-full  flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px] text-start mt-3 \">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 flex justify-around border-black my-2 rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 flex justify-evenly border-black my-2 rounded-md p-4\">\r\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n"
+                },
+                {
+                    "date": 1728878164287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 w-full  flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px] text-start mt-3 \">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 flex justify-evenly border-black my-2 rounded-md p-4\">\r\n+            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 flex justify-between border-black my-2 rounded-md p-4\">\r\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n"
+                },
+                {
+                    "date": 1728878174600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n-                    <button>Done</button>\r\n+                    <button class=\"bgslate-300 p-1 rounded-md font-bold\">Done</button>\r\n                </span> \r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728878180261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n-                    <button class=\"bgslate-300 p-1 rounded-md font-bold\">Done</button>\r\n+                    <button class=\"bgslate-500 p-1 rounded-md font-bold\">Done</button>\r\n                </span> \r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728878198752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n-                    <button class=\"bgslate-500 p-1 rounded-md font-bold\">Done</button>\r\n+                    <button class=\"bg-slate-500 p-1 rounded-md font-bold text-white\">Done</button>\r\n                </span> \r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728878403778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-    <div class=\"mt-4 w-full  flex-col items-center justify-between\">\r\n+    <div class=\"mt-4 w-full mx-auto  flex-col items-center justify-between\">\r\n         <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n         <ul class=\"w-[500px] text-start mt-3 \">\r\n             <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 flex justify-between border-black my-2 rounded-md p-4\">\r\n                <span>\r\n"
+                },
+                {
+                    "date": 1728878457852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n-    <div class=\"mt-4 w-full mx-auto  flex-col items-center justify-between\">\r\n-        <h1 class=\"text-2xl \">Ini Halaman Todo List</h1>\r\n-        <ul class=\"w-[500px] text-start mt-3 \">\r\n-            <li v-for=\"list in todoStore.todoList\" class=\"border-solid border-2 flex justify-between border-black my-2 rounded-md p-4\">\r\n+    <div class=\"mt-4 w-full flex flex-col items-center\">\r\n+        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n+        <ul class=\"w-[500px] text-start mt-3\">\r\n+            <li v-for=\"list in todoStore.todoList\" :key=\"list.id\" class=\"border-solid border-2 flex justify-between border-black my-2 rounded-md p-4\">\r\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n@@ -14,9 +14,9 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n-import {useTodoStore} from '../stores/todoStore'\r\n+import { useTodoStore } from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n         const todoStore = useTodoStore()\r\n@@ -24,7 +24,5 @@\n             todoStore\r\n         }\r\n     }\r\n }\r\n-\r\n-\r\n-</script>\n\\ No newline at end of file\n+</script>\r\n"
+                },
+                {
+                    "date": 1728878555616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n-                    <button class=\"bg-slate-500 p-1 rounded-md font-bold text-white\">Done</button>\r\n+                    <button class=\"bg-slate-500 p-1 rounded-md font-bold text-white\">Set Done</button>\r\n                </span> \r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728879570426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,13 @@\n                <span>\r\n                 {{ list.name }}\r\n                </span> \r\n                <span>\r\n-                    <button class=\"bg-slate-500 p-1 rounded-md font-bold text-white\">Set Done</button>\r\n+                    <button \r\n+                        class=\"bg-slate-500 p-1 rounded-md font-bold text-white\" \r\n+                        @click=\"todoStore.toggleTodoStatus(list.id)\">\r\n+                        {{ list.isDone ? 'Set Undone' : 'Set Done' }}\r\n+                    </button>\r\n                </span> \r\n             </li>\r\n         </ul>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728879703304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,41 @@\n <template>\r\n     <div class=\"mt-4 w-full flex flex-col items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n+\r\n+        <!-- Input untuk menambah Todo -->\r\n+        <div class=\"flex mb-4\">\r\n+            <input\r\n+                v-model=\"newTodo\"\r\n+                type=\"text\"\r\n+                placeholder=\"Masukkan Todo baru\"\r\n+                class=\"border-2 border-gray-300 p-2 rounded\"\r\n+            />\r\n+            <button\r\n+                @click=\"addNewTodo\"\r\n+                class=\"bg-blue-500 text-white p-2 rounded ml-2\"\r\n+            >\r\n+                Tambah\r\n+            </button>\r\n+        </div>\r\n+\r\n         <ul class=\"w-[500px] text-start mt-3\">\r\n             <li v-for=\"list in todoStore.todoList\" :key=\"list.id\" class=\"border-solid border-2 flex justify-between border-black my-2 rounded-md p-4\">\r\n-               <span>\r\n-                {{ list.name }}\r\n-               </span> \r\n-               <span>\r\n+                <span>\r\n+                    {{ list.name }}\r\n+                </span>\r\n+                <span class=\"flex\">\r\n                     <button \r\n                         class=\"bg-slate-500 p-1 rounded-md font-bold text-white\" \r\n                         @click=\"todoStore.toggleTodoStatus(list.id)\">\r\n                         {{ list.isDone ? 'Set Undone' : 'Set Done' }}\r\n                     </button>\r\n-               </span> \r\n+                    <button \r\n+                        @click=\"removeTodo(list.id)\"\r\n+                        class=\"bg-red-500 p-1 rounded-md font-bold text-white ml-2\">\r\n+                        Hapus\r\n+                    </button>\r\n+                </span>\r\n             </li>\r\n         </ul>\r\n     </div>\r\n </template>\r\n@@ -22,11 +44,27 @@\n import { useTodoStore } from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n-        const todoStore = useTodoStore()\r\n+        const todoStore = useTodoStore();\r\n+        const newTodo = ref('');\r\n+\r\n+        const addNewTodo = () => {\r\n+            if (newTodo.value.trim() !== '') {\r\n+                todoStore.addTodo(newTodo.value);\r\n+                newTodo.value = ''; // Reset input setelah menambah\r\n+            }\r\n+        };\r\n+\r\n+        const removeTodo = (id) => {\r\n+            todoStore.removeTodo(id);\r\n+        };\r\n+\r\n         return {\r\n-            todoStore\r\n+            todoStore,\r\n+            newTodo,\r\n+            addNewTodo,\r\n+            removeTodo\r\n         }\r\n     }\r\n }\r\n </script>\r\n"
+                },
+                {
+                    "date": 1728879747434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n+import { ref } from 'vue';  // Tambahkan baris ini\r\n import { useTodoStore } from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n"
+                },
+                {
+                    "date": 1728879810054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n-import { ref } from 'vue';  // Tambahkan baris ini\r\n+import { ref } from 'vue'; \r\n import { useTodoStore } from '../stores/todoStore'\r\n \r\n export default {\r\n     setup() {\r\n"
+                },
+                {
+                    "date": 1728879839844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <template>\r\n     <div class=\"mt-4 w-full flex flex-col items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n-        <!-- Input untuk menambah Todo -->\r\n         <div class=\"flex mb-4\">\r\n             <input\r\n                 v-model=\"newTodo\"\r\n                 type=\"text\"\r\n@@ -51,9 +50,9 @@\n \r\n         const addNewTodo = () => {\r\n             if (newTodo.value.trim() !== '') {\r\n                 todoStore.addTodo(newTodo.value);\r\n-                newTodo.value = ''; // Reset input setelah menambah\r\n+                newTodo.value = ''; \r\n             }\r\n         };\r\n \r\n         const removeTodo = (id) => {\r\n"
+                },
+                {
+                    "date": 1728879848887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n     <div class=\"mt-4 w-full flex flex-col items-center\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n-        <div class=\"flex mb-4\">\r\n+        <div class=\"flex my-4\">\r\n             <input\r\n                 v-model=\"newTodo\"\r\n                 type=\"text\"\r\n                 placeholder=\"Masukkan Todo baru\"\r\n"
+                },
+                {
+                    "date": 1728879857031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n                 Tambah\r\n             </button>\r\n         </div>\r\n \r\n-        <ul class=\"w-[500px] text-start mt-3\">\r\n+        <ul class=\"w-[500px] text-start\">\r\n             <li v-for=\"list in todoStore.todoList\" :key=\"list.id\" class=\"border-solid border-2 flex justify-between border-black my-2 rounded-md p-4\">\r\n                 <span>\r\n                     {{ list.name }}\r\n                 </span>\r\n"
+                }
+            ],
+            "date": 1728875142104,
+            "name": "Commit-0",
+            "content": "<template>\r\n    <div class=\"mx-auto\">\r\n\r\n        <h1>Ini Halaman Todo List</h1>\r\n    </div>\r\n</template>"
+        }
+    ]
+}

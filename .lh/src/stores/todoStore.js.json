@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/stores/todoStore.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1728875314159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728875399043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,13 @@\n import { defineStore } from 'pinia'\r\n \r\n-export const useTodoStore = defineStore('todo', () => {})\n\\ No newline at end of file\n+export const useTodoStore = defineStore('todo', {\r\n+    state: () => ({ count: 0, name: 'Eduardo' }),\r\n+    getters: {\r\n+      doubleCount: (state) => state.count * 2,\r\n+    },\r\n+    actions: {\r\n+      increment() {\r\n+        this.count++\r\n+      },\r\n+    },\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728875709228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { defineStore } from 'pinia'\r\n \r\n export const useTodoStore = defineStore('todo', {\r\n-    state: () => ({ count: 0, name: 'Eduardo' }),\r\n+    state: () => ({ count: 4, name: 'Eduardo' }),\r\n     getters: {\r\n       doubleCount: (state) => state.count * 2,\r\n     },\r\n     actions: {\r\n"
+                },
+                {
+                    "date": 1728876461204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,17 @@\n import { defineStore } from 'pinia'\r\n \r\n export const useTodoStore = defineStore('todo', {\r\n-    state: () => ({ count: 4, name: 'Eduardo' }),\r\n+    state: () => ({ \r\n+        todoList: [\r\n+\r\n+        ]\r\n+    }),\r\n     getters: {\r\n-      doubleCount: (state) => state.count * 2,\r\n+      \r\n     },\r\n     actions: {\r\n-      increment() {\r\n-        this.count++\r\n-      },\r\n+      // increment() {\r\n+      //   this.count++\r\n+      // },\r\n     },\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728876533928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,13 @@\n \r\n export const useTodoStore = defineStore('todo', {\r\n     state: () => ({ \r\n         todoList: [\r\n-\r\n+          {name: 'Belajar HTML', isDone: false},\r\n+          {name: 'Belajar CSS', isDone: false},\r\n+          {name: 'Belajar JavaScript', isDone: false},\r\n+          {name: 'Belajar PHP', isDone: false},\r\n+          {name: 'Belajar Laravel', isDone: false},\r\n         ]\r\n     }),\r\n     getters: {\r\n       \r\n"
+                },
+                {
+                    "date": 1728876901986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n \r\n export const useTodoStore = defineStore('todo', {\r\n     state: () => ({ \r\n         todoList: [\r\n-          {name: 'Belajar HTML', isDone: false},\r\n-          {name: 'Belajar CSS', isDone: false},\r\n-          {name: 'Belajar JavaScript', isDone: false},\r\n-          {name: 'Belajar PHP', isDone: false},\r\n-          {name: 'Belajar Laravel', isDone: false},\r\n+          {id: 1, name: 'Belajar HTML', isDone: false},\r\n+          {id: 2, name: 'Belajar CSS', isDone: false},\r\n+          {id: 3, name: 'Belajar JavaScript', isDone: false},\r\n+          {id: 4, name: 'Belajar PHP', isDone: false},\r\n+          {id: 5, name: 'Belajar Laravel', isDone: false},\r\n         ]\r\n     }),\r\n     getters: {\r\n       \r\n"
+                },
+                {
+                    "date": 1728879554970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,12 @@\n     getters: {\r\n       \r\n     },\r\n     actions: {\r\n-      // increment() {\r\n-      //   this.count++\r\n-      // },\r\n+      toggleTodoStatus(id) {\r\n+        const todo = this.todoList.find(item => item.id === id);\r\n+        if (todo) {\r\n+            todo.isDone = !todo.isDone;\r\n+        }\r\n+    }\r\n     },\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728879669816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,22 @@\n       \r\n     },\r\n     actions: {\r\n       toggleTodoStatus(id) {\r\n-        const todo = this.todoList.find(item => item.id === id);\r\n-        if (todo) {\r\n-            todo.isDone = !todo.isDone;\r\n-        }\r\n-    }\r\n-    },\r\n+          const todo = this.todoList.find(item => item.id === id);\r\n+          if (todo) {\r\n+              todo.isDone = !todo.isDone;\r\n+          }\r\n+      },\r\n+      addTodo(name) {\r\n+          const newTodo = {\r\n+              id: this.todoList.length + 1, // Pastikan ID unik\r\n+              name,\r\n+              isDone: false,\r\n+          };\r\n+          this.todoList.push(newTodo);\r\n+      },\r\n+      removeTodo(id) {\r\n+          this.todoList = this.todoList.filter(item => item.id !== id);\r\n+      }\r\n+  },\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728879821481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n           }\r\n       },\r\n       addTodo(name) {\r\n           const newTodo = {\r\n-              id: this.todoList.length + 1, // Pastikan ID unik\r\n+              id: this.todoList.length + 1, \r\n               name,\r\n               isDone: false,\r\n           };\r\n           this.todoList.push(newTodo);\r\n"
+                }
+            ],
+            "date": 1728875314159,
+            "name": "Commit-0",
+            "content": "import { defineStore } from 'pinia'\r\n\r\nexport const useTodoStore = defineStore('todo', () => {})"
+        }
+    ]
+}

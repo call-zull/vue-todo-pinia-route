@@ -1,0 +1,86 @@
+{
+    "sourceFile": "src/views/CounterView.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1728876186095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728876604461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,17 +11,16 @@\n     </div>\r\n </template>\r\n \r\n <script>\r\n-import {useTodoStore} from '../stores/todoStore'\r\n+import {useCounterStore} from '../stores/counterStore'\r\n \r\n export default {\r\n     setup() {\r\n-        const todoStore = useTodoStore()\r\n+        const countStore = useTodoStore()\r\n         return {\r\n-            todoStore\r\n+            countStore\r\n         }\r\n     }\r\n }\r\n \r\n-\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728876613809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n import {useCounterStore} from '../stores/counterStore'\r\n \r\n export default {\r\n     setup() {\r\n-        const countStore = useTodoStore()\r\n+        const countStore = useCounterStore()\r\n         return {\r\n             countStore\r\n         }\r\n     }\r\n"
+                },
+                {
+                    "date": 1728876630646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n      <div class=\"mx-auto text-center mt-4\">\r\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n         <p class=\"text-lg\">\r\n-            {{ todoStore.count }}\r\n+            {{ countStore.count }}\r\n             {{ todoStore.name }}\r\n             {{ todoStore.doubleCount }}\r\n         </p>\r\n         <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n"
+                },
+                {
+                    "date": 1728876639288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n         <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n \r\n         <p class=\"text-lg\">\r\n             {{ countStore.count }}\r\n-            {{ todoStore.name }}\r\n-            {{ todoStore.doubleCount }}\r\n+            {{ countStore.name }}\r\n+            {{ countStore.doubleCount }}\r\n         </p>\r\n         <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728876653289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n      <div class=\"mx-auto text-center mt-4\">\r\n-        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n+        <h1 class=\"text-2xl\">Ini Halaman Count</h1>\r\n \r\n         <p class=\"text-lg\">\r\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n"
+                },
+                {
+                    "date": 1728876671231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n+        <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728879306196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n+        <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n         <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728879319514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n+        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n         <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728879333328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n+        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-2\">Decrease</button>\r\n         <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728879338588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n \r\n         <p class=\"text-lg\">\r\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n-            {{ countStore.doubleCount }}\r\n+            {{ countStore.doubleCount }}10\r\n         </p>\r\n-        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-2\">Decrease</button>\r\n+        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-\">Decrease</button>\r\n         <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728879344018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n \r\n         <p class=\"text-lg\">\r\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n-            {{ countStore.doubleCount }}10\r\n+            {{ countStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-\">Decrease</button>\r\n+        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-8\">Decrease</button>\r\n         <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n     </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1728879357397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,12 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-8\">Decrease</button>\r\n-        <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n+        <div>\r\n+            <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-8\">Decrease</button>\r\n+            <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n+        </div>\r\n     </div>\r\n </template>\r\n \r\n <script>\r\n"
+                },
+                {
+                    "date": 1728879368893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <div>\r\n-            <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2 mx-8\">Decrease</button>\r\n+        <div class=\"flex flex-col items-center\">\r\n+            <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n             <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n         </div>\r\n     </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1728879375513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <div class=\"flex flex-col items-center\">\r\n+        <div class=\"flex items-center\">\r\n             <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n             <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728879390750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <div class=\"flex items-center\">\r\n+        <div class=\"flex justify-center gap-2\">\r\n             <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n             <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728879401465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n             {{ countStore.count }}\r\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n-        <div class=\"flex justify-center gap-2\">\r\n+        <div class=\"flex justify-center gap-8\">\r\n             <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n             <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1728879407904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n             {{ countStore.name }}\r\n             {{ countStore.doubleCount }}\r\n         </p>\r\n         <div class=\"flex justify-center gap-8\">\r\n-            <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Decrease</button>\r\n+            <button @click=\"countStore.decrement\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Dec</button>\r\n             <button @click=\"countStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n         </div>\r\n     </div>\r\n </template>\r\n"
+                }
+            ],
+            "date": 1728876186095,
+            "name": "Commit-0",
+            "content": "<template>\r\n     <div class=\"mx-auto text-center mt-4\">\r\n        <h1 class=\"text-2xl\">Ini Halaman Todo List</h1>\r\n\r\n        <p class=\"text-lg\">\r\n            {{ todoStore.count }}\r\n            {{ todoStore.name }}\r\n            {{ todoStore.doubleCount }}\r\n        </p>\r\n        <button @click=\"todoStore.increment\" class=\"bg-slate-300 p-1 rounded-md font-bold mt-2\">Add</button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nimport {useTodoStore} from '../stores/todoStore'\r\n\r\nexport default {\r\n    setup() {\r\n        const todoStore = useTodoStore()\r\n        return {\r\n            todoStore\r\n        }\r\n    }\r\n}\r\n\r\n\r\n</script>"
+        }
+    ]
+}
